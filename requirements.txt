@@ -1,0 +1,7 @@
+aiogram==3.*
+SQLAlchemy==2.*
+asyncpg
+aiosqlite
+apscheduler
+python-dotenv
+aiohttp
