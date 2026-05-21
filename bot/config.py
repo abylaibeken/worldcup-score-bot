@@ -15,7 +15,13 @@ class Settings:
 
 settings = Settings(
     bot_token=os.getenv("BOT_TOKEN", ""),
-    database_url=os.getenv("DATABASE_URL", "sqlite+aiosqlite:///bot.db"),
+    database_url=os.getenv(
+    "DATABASE_URL",
+    "sqlite+aiosqlite:///bot.db",
+).replace(
+    "postgresql://",
+    "postgresql+asyncpg://",
+),
     admin_ids=[
         int(x) for x in os.getenv("ADMIN_IDS", "").split(",") if x.strip()
     ],
