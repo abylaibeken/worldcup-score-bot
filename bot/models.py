@@ -50,6 +50,9 @@ class Match(Base):
     home_team: Mapped[str] = mapped_column(String(100))
     away_team: Mapped[str] = mapped_column(String(100))
     kickoff_at: Mapped[datetime] = mapped_column(DateTime)
+
+    stage: Mapped[str] = mapped_column(String(50), default="GROUP")
+    
     status: Mapped[str] = mapped_column(String(30), default="scheduled")
     home_score: Mapped[int | None] = mapped_column(Integer, nullable=True)
     away_score: Mapped[int | None] = mapped_column(Integer, nullable=True)
